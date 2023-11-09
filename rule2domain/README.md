@@ -2,7 +2,7 @@
 
 本模块/cf worker可以将含有较多域名规则的 RULE-SET 拆为两部分：DOMAIN-SET 和去除了 DOMAIN和DOMAIN-SUFFIX的 RULE-SET。目前还没有对 DOMAIN-SET 的 eTLD 做判别，实现也比较简单粗暴。
 
-模块目前只 MITM 了 <raw.githubusercontent.com>，Cloudflare Workers 版可以针对任何网站。
+模块目前只 MITM 了 raw.githubusercontent.com，Cloudflare Workers 版可以针对任何网站。
 
 ## 使用 Surge 模块
 
@@ -18,7 +18,7 @@ RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/r
 
 现在可以改为：
 ```
-DOMAIN-SEThttps://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list?r2d=d, PROXY
+DOMAIN-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list?r2d=d, PROXY
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Google/Google.list?r2d=r, PROXY
 ```
 
