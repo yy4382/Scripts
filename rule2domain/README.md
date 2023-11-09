@@ -1,10 +1,8 @@
 # 将 Surge 的 Rule-Set 拆成 Domain-Set + Rule-Set
 
-有些 RULE-SET 规则（主要是去广告类的）可能有上万条之多，而 Surge 对 RULE-SET 的处理是一条一条进行的，性能相较于 DOMAIN-SET 有较大差距；最近的版本中 RULE-SET 也被限制了不能超过 10MB。
+本模块/cf worker可以将含有较多域名规则的 RULE-SET 拆为两部分：DOMAIN-SET 和去除了 DOMAIN和DOMAIN-SUFFIX的 RULE-SET。目前还没有对 DOMAIN-SET 的 eTLD 做判别，实现也比较简单粗暴。
 
-本模块可以将含有较多域名规则的 RULE-SET 拆为两部分：DOMAIN-SET 和去除了 DOMAIN和DOMAIN-SUFFIX的 RULE-SET，降低性能压力。
-
-PS：对于1000条以内的规则，RULE-SET 和 DOMAIN-SET 性能区别不大；现在bm7的规则里超过1000条的他自己已经分了了DOMAIN-SET和RULE-SET了，其实需求也不大了。
+模块目前只 MITM 了 <raw.githubusercontent.com>，Cloudflare Workers 版可以针对任何网站。
 
 ## 使用 Surge 模块
 
