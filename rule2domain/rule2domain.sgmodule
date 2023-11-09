@@ -1,0 +1,9 @@
+#!name=RULE-SET 转换为 DOMAIN-SET + RULE-SET
+#!desc=在github raw链接后添加 ?r2d=d 即可成为 DOMAIN-SET, 添加 ?r2d=r 即为无DOMAIN和DOMAIN-SUFFIX规则的RULE-SET。可以打开链接查看更详细描述。 
+# 具体说明: https://github.com/yy4382/Scripts/blob/main/rule2domain/README.md
+
+[MITM]
+hostname = %APPEND% raw.githubusercontent.com
+
+[Script]
+rule2domain = type=http-response,pattern=https:\/\/raw\.githubusercontent\.com,requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/yy4382/Scripts/main/rule2domain/rule2domain.js
