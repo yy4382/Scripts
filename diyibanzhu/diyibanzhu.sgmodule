@@ -1,0 +1,15 @@
+#!name=第一版主 - 配合书源
+#!desc=感谢 Dagger(@l1Ill1Il1Il1Ill1II1Il1l1Il1II1), 小一(@xream), Aurora(@shuguanga) 以及脚本原作者，本模块仅作整合。
+# 配合第一版主书源使用
+
+[Rule]
+DOMAIN-KEYWORD,diyibanzhu4,DIRECT
+
+[MITM]
+hostname = %APPEND% *diyibanzhu*
+
+[Header Rewrite]
+http-response ^https:\/\/.*diyibanzhu.*\.com\/\d+\/\d+\/\d+ header-replace content-type "text/html; charset=UTF-8"
+
+[Script]
+dybz = type=http-response,pattern=^https:\/\/.*diyibanzhu.*\.com\/\d+\/\d+\/\d+,binary-body-mode=1,requires-body=1,max-size=-1,timeout=9999,debug=0,script-path=dybz_surge.js
