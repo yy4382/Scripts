@@ -12,4 +12,4 @@ hostname = %APPEND% *diyibanzhu*
 http-response ^https:\/\/.*diyibanzhu.*\.com\/\d+\/\d+\/\d+ header-replace content-type "text/html; charset=UTF-8"
 
 [Script]
-dybz = type=http-response,pattern=^https:\/\/.*diyibanzhu.*\.com\/\d+\/\d+\/\d+,binary-body-mode=1,requires-body=1,max-size=-1,timeout=9999,debug=0,script-path=dybz_surge.js
+dybz = type=http-response,pattern=^https:\/\/.*diyibanzhu.*\.com\/\d+\/\d+\/\d+,binary-body-mode=1,requires-body=1,max-size=-1,timeout=9999,debug=0,script-path=https://github.com/yy4382/Scripts/raw/main/diyibanzhu/dybz_surge.js
