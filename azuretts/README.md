@@ -1,5 +1,10 @@
 # 一个Azure TTS 的爱阅（和其他软件）的使用方法
 
+> [!NOTE]
+> 发现了可以让爱阅支持任意形态的 body 的方法，因此本模块的就业空间消失了。
+> 
+> 如果希望使用 Azure TTS 的官方 API （其他使用 SSML 的语音合成服务也可以用作参考），可以查看 <https://tts-importer.yfi.moe> 这一项目。
+
 由于爱阅的 Post 请求只支持json形式的body，所以使用 Surge 来使它传递 SSML 格式的信息。同时，还做了一些增强，可以修改所有直连 Azure TTS eastasia 地区的语音信息。
 
 使用本方法首先需要注册 Azure 并启动一个 Speech Service，获得一个密钥。Azure 每月免费500k字符的TTS量，不是超重度使用理论上是够的。

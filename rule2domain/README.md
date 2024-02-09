@@ -1,5 +1,6 @@
 # 将 Surge 的 Rule-Set 拆成 Domain-Set + Rule-Set
 
+> [!NOTE]
 > 由于 Surge 的更新，如果使用5.8.1之后的版本，本模块已经没有意义。
 
 本模块/cf worker可以将含有较多域名规则的 RULE-SET 拆为两部分：DOMAIN-SET 和去除了 DOMAIN和DOMAIN-SUFFIX的 RULE-SET。目前还没有对 DOMAIN-SET 的 eTLD 做判别，实现也比较简单粗暴。
